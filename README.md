@@ -1,7 +1,6 @@
 # Problem
 
-We want to have a web service that allows us to play a game called “HIGHER OR LOWER”, without a
-deck of cards.
+We want to have a web service that allows us to play a game called “HIGHER OR LOWER”
 
 # Rules of the game
 The dealer shuffles a deck of 52 cards, draws the first card, and places it on the table.
