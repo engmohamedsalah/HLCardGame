@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HLCardGame.Domain\HLCardGame.Domain.csproj" />
+    <ProjectReference Include="..\HLCardGame.Infrastructure\HLCardGame.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

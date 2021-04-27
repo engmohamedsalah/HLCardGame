@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  hlcardgame.api:
+    image: ${DOCKER_REGISTRY-}hlcardgameapi
+    build:
+      context: .
+      dockerfile: HLCardGame.API\Dockerfile
