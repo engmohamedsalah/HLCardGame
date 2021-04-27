@@ -8,7 +8,7 @@
     <DockerServiceName>hlcardgame.api</DockerServiceName>
   </PropertyGroup>
   <PropertyGroup>
-    <DockerTargetOS>Linux</DockerTargetOS>
+    <DockerTargetOS>Windows</DockerTargetOS>
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.override.yml">
