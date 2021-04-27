@@ -195,12 +195,12 @@ namespace HLCardGame.API.Tests.Controllers
 
             var expectedResult = new GuessResults(
                 sucess: success,
-                deckCard: new CardResults(
+                oldCard: new CardResults(
                    color: deckCard.Color,
                    suit: deckCard.Suit,
                    value: deckCard.Value,
                    displayName: deckCard.DisplayName),
-                card: new CardResults(
+                newCard: new CardResults(
                    color: card.Color,
                    suit: card.Suit,
                    value: card.Value,

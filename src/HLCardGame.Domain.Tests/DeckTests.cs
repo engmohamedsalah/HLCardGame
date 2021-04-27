@@ -32,7 +32,7 @@ namespace HLCardGame.Domain.Tests
                 deckId: deckId,
                 nPlayers: nPlayers,
                 playerTurn: PlayerTurn,
-                deckCardValue: deckCardValue,
+                lastCardValue: deckCardValue,
                 deckCardJson: deckCardJson,
                 cards: cards);
 
@@ -40,7 +40,7 @@ namespace HLCardGame.Domain.Tests
             Assert.AreEqual(Results.DeckId, deckId);
             Assert.AreEqual(Results.NPlayers, nPlayers);
             Assert.AreEqual(Results.PlayerTurn, PlayerTurn);
-            Assert.AreEqual(Results.DeckCardValue, deckCardValue);
+            Assert.AreEqual(Results.LastCardValue, deckCardValue);
             Assert.AreEqual(Results.Cards, cards);
         }
     }

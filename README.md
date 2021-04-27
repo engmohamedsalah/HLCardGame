@@ -81,17 +81,17 @@ and if the result is correct, the game will be ended and the deck will be delete
 ```json
 {
   "sucess": true,
-  "deckCard": {
+  "oldCard": {
     "color": "Black",
     "suit": "Clubs",
-    "value": 5,
-    "displayName": "5C"
+    "value": 11,
+    "displayName": "JC"
   },
-  "card": {
-    "color": "Red",
-    "suit": "Hearts",
-    "value": 6,
-    "displayName": "6H"
+  "newCard": {
+    "color": "Black",
+    "suit": "Spades",
+    "value": 14,
+    "displayName": "AS"
   }
 }
 ```

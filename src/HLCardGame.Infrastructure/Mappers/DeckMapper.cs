@@ -18,8 +18,8 @@ namespace HLCardGame.Infrastructure.Mappers
                 DeckId = deck.DeckId,
                 NPlayers = deck.NPlayers,
                 PlayerTurn = deck.PlayerTurn,
-                DeckCardValue = deck.DeckCardValue,
-                DeckCardJson = deck.DeckCardJson,
+                LastCardValue = deck.LastCardValue,
+                LastCardJson = deck.LastCardJson,
                 Cards = deck.Cards.Select(a => a.ToEntity()).ToList()
             };
         }
@@ -35,8 +35,8 @@ namespace HLCardGame.Infrastructure.Mappers
                 deckId: deck.DeckId,
                 nPlayers: deck.NPlayers,
                 playerTurn: deck.PlayerTurn,
-                deckCardValue: deck.DeckCardValue,
-                deckCardJson: deck.DeckCardJson,
+                lastCardValue: deck.LastCardValue,
+                deckCardJson: deck.LastCardJson,
                 cards: deck.Cards?.Select(a => a.ToModel()).ToList()
                 );
         }

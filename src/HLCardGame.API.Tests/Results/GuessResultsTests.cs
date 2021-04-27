@@ -26,13 +26,13 @@ namespace HLCardGame.API.Tests.Results
             // Act
             var Results = new GuessResults(
                 sucess: sucess,
-                deckCard: deckCard,
-                card: card);
+                oldCard: deckCard,
+                newCard: card);
 
             // Assert
             Assert.AreEqual(Results.Sucess, sucess);
-            Assert.AreEqual(Results.Card, card);
-            Assert.AreEqual(Results.DeckCard, deckCard);
+            Assert.AreEqual(Results.NewCard, card);
+            Assert.AreEqual(Results.OldCard, deckCard);
         }
     }
 }

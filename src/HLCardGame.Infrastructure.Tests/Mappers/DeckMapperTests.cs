@@ -31,8 +31,8 @@ namespace HLCardGame.Infrastructure.Tests.Mappers
                 deckId: deckEntity.DeckId,
                 nPlayers: deckEntity.NPlayers,
                 playerTurn: deckEntity.PlayerTurn,
-                deckCardValue: deckEntity.DeckCardValue,
-                deckCardJson: deckEntity.DeckCardJson,
+                lastCardValue: deckEntity.LastCardValue,
+                deckCardJson: deckEntity.LastCardJson,
                 cards: deckEntity.Cards.Select(a => a.ToModel()).ToList());
 
             // Act
@@ -67,7 +67,7 @@ namespace HLCardGame.Infrastructure.Tests.Mappers
                 deckId: Guid.NewGuid(),
                 nPlayers: _fixture.Create<int>(),
                 playerTurn: _fixture.Create<int>(),
-                deckCardValue: _fixture.Create<int>(),
+                lastCardValue: _fixture.Create<int>(),
                 deckCardJson: "{}",
                 cards: GenerateRandomCards(52).ToList());
 
@@ -76,8 +76,8 @@ namespace HLCardGame.Infrastructure.Tests.Mappers
                 DeckId = deck.DeckId,
                 NPlayers = deck.NPlayers,
                 PlayerTurn = deck.PlayerTurn,
-                DeckCardValue = deck.DeckCardValue,
-                DeckCardJson = deck.DeckCardJson,
+                LastCardValue = deck.LastCardValue,
+                LastCardJson = deck.LastCardJson,
                 Cards = deck.Cards.Select(a => a.ToEntity()).ToList(),
             };
 

@@ -110,12 +110,12 @@ namespace HLCardGame.API.Controllers
 
             return Ok(new GuessResults(
                 sucess: result.Item1,
-                deckCard: new CardResults(
+                oldCard: new CardResults(
                    color: result.Item2.Color,
                    suit: result.Item2.Suit,
                    value: result.Item2.Value,
                    displayName: result.Item2.DisplayName),
-                card: new CardResults(
+                newCard: new CardResults(
                    color: result.Item3.Color,
                    suit: result.Item3.Suit,
                    value: result.Item3.Value,

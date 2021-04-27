@@ -9,16 +9,16 @@ namespace HLCardGame.Domain
             Guid deckId,
             int nPlayers,
             int playerTurn,
-            int deckCardValue,
+            int lastCardValue,
             string deckCardJson,
             List<Card> cards)
         {
             DeckId = deckId;
             NPlayers = nPlayers;
             PlayerTurn = playerTurn;
-            DeckCardValue = deckCardValue;
+            LastCardValue = lastCardValue;
             Cards = cards;
-            DeckCardJson = deckCardJson;
+            LastCardJson = deckCardJson;
         }
 
         public Guid DeckId { get; set; }
@@ -27,9 +27,9 @@ namespace HLCardGame.Domain
 
         public int PlayerTurn { get; set; }
 
-        public int DeckCardValue { get; set; }
+        public int LastCardValue { get; set; }
 
-        public string DeckCardJson { get; set; }
+        public string LastCardJson { get; set; }
 
         public List<Card> Cards { get; set; }
     }

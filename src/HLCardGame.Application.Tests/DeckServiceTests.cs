@@ -143,8 +143,8 @@ namespace HLCardGame.Application.Tests
 
             var deck = _fixture
                 .Build<DeckEntity>()
-                .With(a => a.DeckCardJson, JsonConvert.SerializeObject(oldDeckCard))
-                .With(a => a.DeckCardValue, oldDeckCard.Value)
+                .With(a => a.LastCardJson, JsonConvert.SerializeObject(oldDeckCard))
+                .With(a => a.LastCardValue, oldDeckCard.Value)
                 .Create();
 
             _deckRepository
@@ -186,8 +186,8 @@ namespace HLCardGame.Application.Tests
 
             var deck = _fixture
                 .Build<DeckEntity>()
-                .With(a => a.DeckCardJson, JsonConvert.SerializeObject(oldDeckCard))
-                .With(a => a.DeckCardValue, oldDeckCard.Value)
+                .With(a => a.LastCardJson, JsonConvert.SerializeObject(oldDeckCard))
+                .With(a => a.LastCardValue, oldDeckCard.Value)
                 .Create();
 
             _deckRepository

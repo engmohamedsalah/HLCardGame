@@ -11,21 +11,21 @@ namespace HLCardGame.API.Results
         /// Initializes a new instance of the <see cref="GuessResults"/> class.
         /// </summary>
         /// <param name="sucess">if set to <c>true</c> [sucess].</param>
-        /// <param name="card">The card.</param>
+        /// <param name="newCard">The card.</param>
         public GuessResults(
             bool sucess,
-            CardResults card,
-            CardResults deckCard)
+            CardResults newCard,
+            CardResults oldCard)
         {
-            Card = card;
+            NewCard = newCard;
             Sucess = sucess;
-            DeckCard = deckCard;
+            OldCard = oldCard;
         }
 
         public bool Sucess { get; }
 
-        public CardResults DeckCard { get; }
+        public CardResults OldCard { get; }
 
-        public CardResults Card { get; }
+        public CardResults NewCard { get; }
     }
 }

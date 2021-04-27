@@ -38,7 +38,7 @@ namespace HLCardGame.Application
                 deckId: deckId,
                 nPlayers: nPlayer,
                 playerTurn: 0,
-                deckCardValue: 0,
+                lastCardValue: 0,
                 deckCardJson: "{}",
                 cards: cards);
 
@@ -56,22 +56,22 @@ namespace HLCardGame.Application
             if (newDeckCard == null)
                 throw new Exception("this Deck contains no cards");
 
-            if (deck.DeckCardValue == 0)
+            if (deck.LastCardValue == 0)
                 throw new Exception("game did not started yet");
 
             deck.Cards.Remove(newDeckCard);
 
             //calculate the Guess Result
             var GuessResult = (
-               (guessDirection == GuessDirection.Higher && deck.DeckCardValue <= newDeckCard.Value)
+               (guessDirection == GuessDirection.Higher && deck.LastCardValue <= newDeckCard.Value)
                ||
-               (guessDirection == GuessDirection.Lower && deck.DeckCardValue >= newDeckCard.Value)
+               (guessDirection == GuessDirection.Lower && deck.LastCardValue >= newDeckCard.Value)
            );
 
             //now the top card will be on the deck
-            deck.DeckCardValue = newDeckCard.Value;
-            var oldCard = JsonConvert.DeserializeObject<Card>(deck.DeckCardJson);
-            deck.DeckCardJson = JsonConvert.SerializeObject(newDeckCard);
+            deck.LastCardValue = newDeckCard.Value;
+            var oldCard = JsonConvert.DeserializeObject<Card>(deck.LastCardJson);
+            deck.LastCardJson = JsonConvert.SerializeObject(newDeckCard);
 
             //get the next player turn
             deck.PlayerTurn = (deck.PlayerTurn + 1) % (deck.NPlayers + 1);
@@ -103,8 +103,8 @@ namespace HLCardGame.Application
                 deck.PlayerTurn++;
             }
 
-            deck.DeckCardValue = card.Value;
-            deck.DeckCardJson = JsonConvert.SerializeObject(card);
+            deck.LastCardValue = card.Value;
+            deck.LastCardJson = JsonConvert.SerializeObject(card);
             await _deckRepository.UpdateDeckCardAsync(deck);
             return card;
         }

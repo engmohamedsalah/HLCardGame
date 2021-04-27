@@ -15,9 +15,9 @@ namespace HLCardGame.Infrastructure.Entities
 
         public int PlayerTurn { get; set; }
 
-        public int DeckCardValue { get; set; }
+        public int LastCardValue { get; set; }
 
-        public string DeckCardJson { get; set; }
+        public string LastCardJson { get; set; }
 
         public virtual ICollection<CardEntity> Cards { get; set; }
     }
