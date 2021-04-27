@@ -78,6 +78,9 @@ namespace HLCardGame.Application
 
             await _deckRepository.UpdateDeckCardAsync(deck);
 
+            //if the guess is true end the game
+            if (GuessResult)
+                await CancelDeckAsync(deckId);
             return (GuessResult, oldCard, newDeckCard);
         }
 

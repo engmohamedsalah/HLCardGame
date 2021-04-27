@@ -44,8 +44,8 @@ namespace HLCardGame.API.Controllers
         [HttpPost("new/shuffle/{numberOfPlayers}")]
         public async Task<IActionResult> CreateNewDeck(int numberOfPlayers)
         {
-            if (numberOfPlayers <= 0)
-                return BadRequest("number of player should be greater than 0");
+            if (numberOfPlayers <= 1)
+                return BadRequest("number of player should be greater than 1");
 
             var result = await _gameControlService.CreateDeckAsync(numberOfPlayers);
 
@@ -127,7 +127,7 @@ namespace HLCardGame.API.Controllers
         /// </summary>
         /// <param name="deckId">The Deck identifier.</param>
         /// <returns></returns>
-        [HttpDelete]
+        [HttpDelete("{deckId}")]
         public async Task<IActionResult> CancelDeck(Guid deckId)
         {
             var result = await _gameControlService.CancelDeckAsync(deckId);
